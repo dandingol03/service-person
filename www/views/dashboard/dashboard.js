@@ -23,6 +23,14 @@ angular.module('starter')
       $scope.tabIndex=i;
     };
 
+    $scope.go_detail=function(item){
+      $scope.detail=item;
+    }
+
+    $scope.go_back_from_detail=function(){
+      $scope.detail=null;
+    }
+
 
 
     $scope.go_back=function(){

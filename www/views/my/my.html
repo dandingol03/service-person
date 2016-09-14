@@ -1,4 +1,4 @@
-<ion-view view-title="我的">
+<ion-view view-title="个人信息管理">
 
   <ion-nav-bar class="bar-stable" align-title="center" >
     <ion-nav-buttons side="left">
@@ -20,30 +20,66 @@
     <ul class="list">
 
       <li class="item item-icon-right" ng-click="go_to('myInfo')">
-
         <span>
             <i class="ion-person"  style="font-size: 3.2em;"></i>
-            {{user.phone}}
         </span>
-        <i class="icon ion-chevron-right" style="font-size: 1.2em;"></i>
       </li>
     </ul>
 
 
-    <ion-list>
-      <ion-item ng-repeat="item in infos" class="item item-icon-right" ng-click="go_to(item.href)">
-        <span>
-          <i class="ion-clipboard"  ng-style="item.style" ng-if="$index%2==0"></i>
-          <i class="ion-levels" ng-style="item.style" ng-if="$index%2!=0"></i>
-          {{item.title}}
-        </span>
-        <i class="icon ion-chevron-right" style="font-size: 1.2em;"></i>
-      </ion-item>
-    </ion-list>
+    <div>
+      <div class="list list-inset padding" style="margin-bottom:40px;">
+        <div class="item" style="margin:1px;border-top:0px;border-left:0px;border-right:0px;padding:10px;">
+            <span class="input-label" style="display: inline-block;">
+              单位:
+            </span>
+          <input type="text" placeholder="请输入您的车牌"
+                 style="display: inline-block" ng-value="carInfo.carNum"
+                 ng-model="carInfo.carNum"/>
+        </div>
+        <div class="item" style="margin:1px;border-top:0px;border-left:0px;border-right:0px;padding:10px;">
+             <span class="input-label" style="display: inline-block;">
+              姓名:
+            </span>
+          <input type="text" placeholder="输入车主姓名"
+                 style="display: inline-block"  ng-value="carInfo.ownerName"
+                 ng-model="carInfo.ownerName"/>
+        </div>
+        <div class="item" style="margin:1px;border-top:0px;border-left:0px;border-right:0px;padding:10px;">
+             <span class="input-label" style="display: inline-block;">
+              证件:
+            </span>
+          <input type="text" placeholder="输入车主姓名"
+                 style="display: inline-block"  ng-value="carInfo.ownerName"
+                 ng-model="carInfo.ownerName"/>
+        </div>
+        <div class="item" style="margin:1px;border-top:0px;border-left:0px;border-right:0px;padding:10px;">
+             <span class="input-label" style="display: inline-block;">
+              身份证号:
+            </span>
+          <input type="text" placeholder="输入车主姓名"
+                 style="display: inline-block"  ng-value="carInfo.ownerName"
+                 ng-model="carInfo.ownerName"/>
+        </div>
+
+        <div class="item" style=" margin:1px;border-top:0px;border-left:0px;border-right:0px;padding:10px;position: relative">
+             <span class="input-label" style="display: inline-block;">
+              接单偏好:
+            </span>
+          <input type="text" placeholder="请选择您的接单偏好"
+                 style="display: inline-block"  ng-value="order_intend"
+                 ng-model="carInfo.ownerName"/>
+          <div
+            style="position: absolute;display:inline-block;right: 10%;top:40%;font-size: 1.4em;"
+            ng-click="set_order_intend()"
+            >
+            <i class="ion-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
   </ion-content>
-
-
-
-
 </ion-view>

@@ -72,10 +72,15 @@ angular.module('starter', ['ionic'])
         }
       })
 
-      .state('my',{
+      .state('tabs.my',{
         url:'/my',
-        controller: 'myController',
-        templateUrl:'views/my/my.html'
+        views:{
+          'my-tab':{
+            controller:'myController',
+            templateUrl:'views/my/my.html'
+          }
+        }
+
     });
 
     $urlRouterProvider.otherwise('/tabs/dashboard');
