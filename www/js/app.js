@@ -62,6 +62,12 @@ angular.module('starter', ['ionic'])
         templateUrl:'views/login/login.html'
       })
 
+      .state('register',{
+        url:'/register',
+        controller:'registerController',
+        templateUrl:'views/register/register.html'
+      })
+
       .state('tabs.dashboard',{
         url:'/dashboard',
         views:{
